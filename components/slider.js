@@ -1,7 +1,7 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
 import { slideData } from './data/slide-data.js'
-
+import Image from 'next/image'
+import { useState, useEffect } from 'react'
 
 const Slider = () => {
 
@@ -20,16 +20,18 @@ const Slider = () => {
         setCurrentPreview(currentPreview === slideLength - 1 ? 0 : currentPreview + 1);
     }
 
-    function auto() {
+    const auto = () => {
         slideInterval = setInterval(nextSlide, interval);
     };
-
 
     useEffect(() => {
         setCurrentPreview(0)
     }, [])
 
     useEffect(() => {
+
+        
+        
         if (autoSlide) {
             auto()
         }
@@ -42,18 +44,19 @@ const Slider = () => {
 
                 {slideData.map((item, index) => {
                     return (
-                        <div className={index === currentPreview ? "slideCurrent" : "item"} key={index} className="container  flex flex-col justify-center items-center">
+                        <div className={index === currentPreview ? "slideCurrent" : "item"} key={index} >
+                            {/* className="container  flex flex-col justify-center items-center" */}
                             {index === currentPreview && (
-                                <>
-                                    <div className='imgContain w-[auto] h-[auto] overflow-hidden '>
-                                        <img src={item.img} alt='pics' className='img w-[500px]' />
+                                <div>
+                                    <div className='imgContain flex justify-center items-center w-[100%] h-[700px] overflow-hidden '>
+                                        <img src={item.img} alt='pics' className='img w-[700px] h-[auto] ' />
                                     </div>
 
                                     <div className='quote'>
                                         <p className='mt-[2%] heading font-medium text-[30px] '>{item.heading}</p>
                                         <p className='mt-[2%] heading font-medium text-[20px]'>{item.desc}</p>
                                     </div>
-                                </>
+                                </div>
                             )}
                         </div>
                     )
