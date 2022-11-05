@@ -7,32 +7,33 @@ const Slider = () => {
 
     const [currentPreview, setCurrentPreview] = useState(0);
 
-    const slideLength = slideData.length;
-    // console.log(slideLength) 1, 2, 3, 4
-    // console.log(currentPreview) 0, 1, 2, 3, 
-    console.log(currentPreview)
-
-    const autoSlide = true;
-    let slideInterval;
-    let interval = 5000;
-
-    const nextSlide = () => {
-        setCurrentPreview(currentPreview === slideLength - 1 ? 0 : currentPreview + 1);
-    }
-
-    const auto = () => {
-        slideInterval = setInterval(nextSlide, interval);
-    };
-
     useEffect(() => {
         setCurrentPreview(0)
     }, [])
 
     useEffect(() => {
+
+        let slideInterval;
+        let interval = 5000;
+
+        const slideLength = slideData.length;
+        const autoSlide = true;
+
+
+        const nextSlide = () => {
+            setCurrentPreview(currentPreview === slideLength - 1 ? 0 : currentPreview + 1);
+        }
+
+       
+        const auto = () => {
+            slideInterval = setInterval(nextSlide, interval);
+        };
+
         if (autoSlide) {
             auto()
         }
         return () => clearInterval(slideInterval)
+
     }, [currentPreview])
 
     return (
