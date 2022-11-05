@@ -17,6 +17,11 @@ export const slideData = [
         heading: `"Life is so short you can't not waste even a day subscribing to what someone thinks you can do versus knowing what you can do"`,
         desc: '– Virgil Abloh'
     },
+    {
+        img: 'https://malinowski.fr/wp-content/uploads/2016/06/23-OCeAN-min.jpg',
+        // heading: `"Life is so short you can't not waste even a day subscribing to what someone thinks you can do versus knowing what you can do"`,
+        desc: 'OCÉAN - Andrzej Malinowski'
+    },
 
     {
         img: 'https://res.cloudinary.com/dlyijmtfx/image/upload/v1667028638/project-pics/IMG_5161_iuiiab.jpg',

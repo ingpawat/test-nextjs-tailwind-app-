@@ -1,6 +1,5 @@
 import React from 'react'
 import { slideData } from './data/slide-data.js'
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
 const Slider = () => {
