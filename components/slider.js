@@ -1,7 +1,9 @@
 import React from 'react'
 import { slideData } from './data/slide-data.js'
 import { useState, useEffect } from 'react'
-import Image from 'next/image.js'
+
+
+
 
 const Slider = () => {
 
@@ -14,7 +16,7 @@ const Slider = () => {
     useEffect(() => {
 
         let slideInterval;
-        let interval = 5000;
+        let interval = 8000;
 
         const slideLength = slideData.length;
         const autoSlide = true;
@@ -47,7 +49,7 @@ const Slider = () => {
                             {index === currentPreview && (
                                 <div>
                                     <div className='imgContain flex justify-center items-center w-[100%] h-[700px] overflow-hidden '>
-                                        <Image src={item.img} alt='pics' className='img w-[700px] h-[auto] ' />
+                                        <img src={item.img} alt='pics' className='img w-[700px] h-[auto] ' />
                                     </div>
 
                                     <div className='quote'>
